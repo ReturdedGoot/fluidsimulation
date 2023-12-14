@@ -1,0 +1,14 @@
+﻿  camera.cpp
+  main.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(34,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(43,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(44,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(48,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(49,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(50,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(51,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(244,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(228,12): warning C4101: 'direction': unreferenced local variable
+  Generating Code...
+  FluidSimulation.vcxproj -> C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\x64\Debug\FluidSimulation.exe
