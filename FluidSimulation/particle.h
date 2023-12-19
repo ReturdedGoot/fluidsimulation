@@ -8,5 +8,7 @@ class Particle {
 public:
 	glm::vec3 Position;
 
+	float size;
+
 	Particle(glm::vec3 position);
 };

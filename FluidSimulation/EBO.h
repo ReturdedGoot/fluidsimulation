@@ -6,7 +6,9 @@ class EBO
 {
 public:
 	GLuint id;
-	EBO(GLuint* vertices, GLsizeiptr size);
+	bool multiple;
+	EBO();
+	EBO(GLuint* vertices, GLsizeiptr size, bool Multiple);
 
 	void Bind();
 	void Unbind();

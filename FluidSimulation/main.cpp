@@ -6,6 +6,7 @@
 #include<glm/glm.hpp>
 #include<glm/gtc/matrix_transform.hpp>
 #include<glm/gtc/type_ptr.hpp>
+#include<vector>
 
 #include "shaderClass.h"
 #include "VAO.h"
@@ -14,6 +15,10 @@
 #include "stb_image.h"	
 #include "texture.h"
 #include "camera.h"
+#include "engine.h"
+#include "sphere.h"
+#include "line.h"
+
 
 float lastX = 400;
 float lastY = 300;
@@ -96,68 +101,8 @@ int main() {
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 
-	GLfloat vertices[] =
-	{
-		//Vertex positions		Colors						Textures
-		//front face
-		 0.5f,  0.5f, 0.5f,		1.0f, 0.0f, 0.0f,	1.0f, 1.0f,// top right    0
-		 0.5f, -0.5f, 0.5f,		0.0f, 1.0f, 0.0f, 	1.0f, 0.0f,// bottom right 1
-		-0.5f, -0.5f, 0.5f,		0.0f, 0.0f, 1.0f, 	0.0f, 0.0f,// bottom left  2
-		-0.5f,  0.5f, 0.5f,		0.0f, 0.0f, 0.0f, 	0.0f, 1.0f,// top left     3
 
-		//backface
-		 0.5f,  0.5f, -0.5f,	1.0f, 0.0f, 0.0f , 	1.0f, 1.0f,// top right    4
-		 0.5f, -0.5f, -0.5f,	0.0f, 1.0f, 0.0f,	1.0f, 0.0f,// bottom right 5
-		-0.5f, -0.5f, -0.5f,	0.0f, 0.0f, 1.0f, 	0.0f, 0.0f,// bottom left  6
-		-0.5f,  0.5f, -0.5f,	0.0f, 0.0f, 0.0f, 	0.0f, 1.0f// top left      7
-
-
-	};
-
-
-	GLuint indices[] =
-	{
-		//front face
-		0, 1, 3,
-		1, 2, 3,
-
-		//backface
-		4,5,7,
-		5,6,7,
-
-		//top face
-		0, 3,4,
-		3, 4, 7,
-
-		//bottom face
-		1, 2, 5,
-		2, 5, 6,
-
-		//right face
-		4, 5, 1,
-		4, 1, 0,
-
-		//left face
-		2,  3, 6,
-		3, 6, 7
-		
-	};
-
-	glm::vec3 cubePositions[] = {
-	glm::vec3(0.0f,  0.0f,  0.0f),
-	glm::vec3(2.0f,  5.0f, -15.0f),
-	glm::vec3(-1.5f, -2.2f, -2.5f),
-	glm::vec3(-3.8f, -2.0f, -12.3f),
-	glm::vec3(2.4f, -0.4f, -3.5f),
-	glm::vec3(-1.7f,  3.0f, -7.5f),
-	glm::vec3(1.3f, -2.0f, -2.5f),
-	glm::vec3(1.5f,  2.0f, -2.5f),
-	glm::vec3(1.5f,  0.2f, -1.5f),
-	glm::vec3(-1.3f,  1.0f, -1.5f)
-	};
-
-
-
+	 
 	// Creating a window object called YOUTUBE OpenGL of a size 800x800 pixells	.
 	GLFWwindow* window = glfwCreateWindow(800, 800, "YoutubeOpenGL", NULL, NULL);
 
@@ -179,42 +124,48 @@ int main() {
 	//Load GLAD so it configures OpenGL
 	gladLoadGL();
 
+
+
+
+
+
+
+	std::vector<GLfloat> lineVertices = {
+		-1.0f, 0.0f, 0.0f,
+		1.0f, 0.0f, 0.0f
+	};
+
+
+
+
 	//so Specify the viewport of OpenGL in the window
 	glViewport(0, 0, 800, 800);
 	glEnable(GL_DEPTH_TEST);
 
 	Shader shaderProgram("vertex.shader", "fragment.shader");
+	Shader lightShaderProgram("vertex.shader", "light.shader");
 
-	VAO VAO1;
-	VAO1.Bind();
 
-	VBO VBO1(vertices, sizeof(vertices));
-	EBO EBO1(indices, sizeof(indices));
+
+	//Creating a Sphere for the light object
+	Sphere lightSphere = Sphere(1, 36, 18);
+	//creating a sphere for the particles
+	Sphere particleSphere = Sphere(1, 36, 18);
+	//create a line
+	Line line = Line(glm::vec3(-1.0f, 0.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+
+
 	
 
-	//Texture coordinates
-	//Link texture array via VAO
-	VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 8*sizeof(float), (void *)0);
-	VAO1.LinkAttrib(VBO1, 1, 3, GL_FLOAT, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-	VAO1.LinkAttrib(VBO1, 2, 2, GL_FLOAT, 8*sizeof(float), (void*)(6*sizeof(float))); 
-
-	//Texture texture("container.jpg");
-
-
-	//
-
-	VAO1.Unbind();
-	VBO1.Unbind();
-	EBO1.Unbind();
-
-	Texture texture1("container.jpg");
-	Texture texture2("awesomeface.png");
+	//Texture texture1("container.jpg");
+	//Texture texture2("awesomeface.png");
 
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); //enable and disable wireframe mode
 
-	shaderProgram.Activate();
-	shaderProgram.setInt("texture1", 0); // don't forget to activate the shader before setting uniforms!  
-	shaderProgram.setInt("texture2", 1);
+
+	//shaderProgram.setInt("texture1", 0); // don't forget to activate the shader before setting uniforms!  
+	//shaderProgram.setInt("texture2", 1);
+
 
 
 	//Initialied functions
@@ -230,9 +181,12 @@ int main() {
 
 	
 
+	/*
+	Particle Simulation right here. 
+	*/
 
-
-
+	Engine engine = Engine(particleSphere.vertices, particleSphere.indices, 1);
+	//we know make the particles
 
 
 	// Main while loop
@@ -251,43 +205,25 @@ int main() {
 		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		//we create the colors of the tiangle
-		//float timeValue = glfwGetTime();
-		//float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
-		//int vertexColorLocation = glGetUniformLocation(shaderProgram.id, "ourColor");
-
-		/* Include all mathematics over here*/
-
-		//const float radius = 10.0f;
-		//float camX = sin(glfwGetTime()) * radius;
-		//float camZ = cos(glfwGetTime()) * radius;
-
-
-
-
-		//glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
-		//glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
-
-
-		//glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f); //up vector in world space
-		//glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
-		//glm::vec3 cameraUp = glm::normalize(glm::cross(cameraDirection, cameraRight));
-
+		//drawing the light
 		
 
 
-		//direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-		//direction.y = sin(glm::radians(pitch));
-		//direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-
-		//cameraFront = glm::normalize(direction);
 
 		/* model, view and projection matrices */
 
 
-		//defines the matrix of the models position and rotation
-		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::rotate(model, (float) glfwGetTime()* glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+	//	defines the matrix of the models position and rotation
+
+		//make it orbit around 0, 0
+		float radius = 7.0;
+		glm::vec3 lightPos = glm::vec3(radius * sin(glfwGetTime()), 0, radius * cos(glfwGetTime()));
+
+		float changeVar = sin(glfwGetTime());
+		//glm::vec3 lightPos = glm::vec3(-1.0 * changeVar, 0.0, -6.0 );
+		glm::mat4 modelMatrix = glm::translate(glm::scale(glm::mat4(1.0f), glm::vec3(0.1f)), lightPos);
+		
+		//model = glm::rotate(model, (float) glfwgettime()* glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));*/
 
 		
 		//defines the world location/view of the models.
@@ -300,54 +236,97 @@ int main() {
 		glm::mat4 projection;
 		projection = glm::perspective(glm::radians(camera.Zoom), 800.0f / 600.0f, 0.1f, 100.0f);
 
+
 		
-		//float timeValue = glfwGetTime();
-		//float angle = sin(timeValue) * 90.0f;
-		//
-		//glm::mat4 trans = glm::mat4(1.0f);
-		//trans = glm::rotate(trans, glm::radians(angle), glm::vec3(0.0, 1.0, 1.0));
+		lightShaderProgram.Activate(); //activating a light shader
 
-		unsigned int modelLoc = glGetUniformLocation(shaderProgram.id, "model");
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		lightShaderProgram.setMat4("model", modelMatrix);
+		lightShaderProgram.setMat4("view", view);
+		lightShaderProgram.setMat4("projection", projection);
 
-		unsigned int viewLoc = glGetUniformLocation(shaderProgram.id, "view");
-		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 
-		unsigned int projectionLoc = glGetUniformLocation(shaderProgram.id, "projection");
-		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		shaderProgram.setVec3("light.position", lightPos);
 
+
+		//we use the light sphere.
+		lightSphere.DrawSphere();
+
+
+
+
+		//we want to bind the VAO for the lines.
+		
+
+		//we change 
+		
+		modelMatrix = glm::mat4(1.0f);
+		//modelMatrix = glm::scale(modelMatrix, glm::vec3(5.0f));
+
+
+		shaderProgram.Activate(); //activating a light shader
+
+		shaderProgram.setMat4("model", modelMatrix);
+		shaderProgram.setMat4("view", view);
+		shaderProgram.setMat4("projection", projection);
+
+
+
+		shaderProgram.setVec3("light.ambient", glm::vec3(0.2f, 0.2f, 0.2f));
+		shaderProgram.setVec3("light.diffuse", glm::vec3(0.5f, 0.5f, 0.5f)); // darken diffuse light a bit
+		shaderProgram.setVec3("light.specular", glm::vec3(1.0f, 1.0f, 1.0f));
+		shaderProgram.setVec3("objectColor", glm::vec3(0.0f, 0.0f, 1.0f));
+		
+		line.DrawLine();
 
 		/*End it around here*/
-		//activate texture unit
-		glActiveTexture(GL_TEXTURE0);
-		texture1.Bind();
-		glActiveTexture(GL_TEXTURE1);
-		texture2.Bind();
+		////activate texture unit
+		//glActiveTexture(GL_TEXTURE0);
+		//texture1.Bind();
+		//glActiveTexture(GL_TEXTURE1);
+		//texture2.Bind();
+		
 
-
-		VAO1.Bind();
 		shaderProgram.Activate();
-		for (int i = 0; i < 10; i++)
-		{
-			glm::mat4 model = glm::mat4(1.0f);
-			model = glm::translate(model, cubePositions[i]);
-			float angle = 20.0f * i;
-			model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
-			shaderProgram.setMat4("model", model);
+		shaderProgram.setMat4("view", view);
+		shaderProgram.setMat4("projection", projection);
+		shaderProgram.setVec3("viewPos", camera.Position);
 
-			glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+		//Light settings
+		shaderProgram.setVec3("light.position", lightPos);
+		shaderProgram.setVec3("light.ambient", glm::vec3(0.2f, 0.2f, 0.2f));
+		shaderProgram.setVec3("light.diffuse", glm::vec3(0.5f, 0.5f, 0.5f)); // darken diffuse light a bit
+		shaderProgram.setVec3("light.specular", glm::vec3(1.0f, 1.0f, 1.0f));
+
+		//update the physics engine
+		//engine.update(deltaTime);
+
+		for (int i = 0; i < engine.numParticles; i++) {
+
+			glm::mat4 modelMatrix = engine.ModelMatrices[i];
+			Particle particle = engine.Particles[i];
+
+			//glm::vec3 particlePos = glm::vec3(0.5f, 0.0f, -5.0f);
+			glm::vec3 particlePos = glm::vec3(0.0);
+
+			modelMatrix = glm::translate(glm::scale(modelMatrix, glm::vec3(0.2f)), particlePos);
+			//calculate the normal matrix
+			glm::mat3 normalMatrix = glm::transpose(glm::inverse(glm::mat3(modelMatrix)));
+
+			shaderProgram.setVec3("objectColor", glm::vec3(1.0f, 0.5f, 0.31f));
+			shaderProgram.setMat4("model", modelMatrix);
+			shaderProgram.setMat3("normalMatrix", normalMatrix);
+
+			//object material settings.
+			shaderProgram.setVec3("material.ambient", glm::vec3(1.0f, 0.5f, 0.31f));
+			shaderProgram.setVec3("material.diffuse", glm::vec3(1.0f, 0.5f, 0.31f));
+			shaderProgram.setVec3("material.specular", glm::vec3(0.5f, 0.5f, 0.5f));
+			shaderProgram.setFloat("material.shininess", 32.0f);
+			
+
+
+			particleSphere.DrawSphere();
 		}
 
-
-		
-		//glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
-		//here we draw the triangles
-		// 
-		//glDrawArrays(GL_TRIANGLES, 0, 3);
-		//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-		
-		
-		//glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		glfwSwapBuffers(window);
 
@@ -357,11 +336,13 @@ int main() {
 	}
 
 	
-	//opengl deletes
-	VAO1.Delete();
-	VBO1.Delete();
-	EBO1.Delete();
+	////opengl deletes
+	//VAO1.Delete();
+	//VBO1.Delete();
+	//EBO1.Delete();
+	//we want
 	shaderProgram.Delete();
+	lightShaderProgram.Delete();
 	//Delete the windows and destroy them
 	glfwDestroyWindow(window);
 	glfwTerminate();
