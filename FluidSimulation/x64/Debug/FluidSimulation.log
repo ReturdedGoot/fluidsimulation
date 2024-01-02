@@ -1,16 +1,91 @@
-﻿  engine.cpp
-  line.cpp
+﻿  grid.cpp
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(37,8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(38,8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(39,8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(57,8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(58,8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(59,8): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(62,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(63,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(64,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(66,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(67,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\grid.cpp(68,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   main.cpp
   The contents of <filesystem> are available only with C++17 or later.
-C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(39,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(48,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(49,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(53,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(54,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(55,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(56,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(198,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(222,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(179,12): warning C4101: 'direction': unreferenced local variable
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(50,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(59,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(60,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(64,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(65,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(66,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(67,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(106,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(161,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(161,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(177,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(211,33): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(211,19): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(329,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(335,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(277,8): warning C4102: 'ImGui': unreferenced label
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\main.cpp(255,12): warning C4101: 'direction': unreferenced local variable
+  engine.cpp
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(34,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(41,32): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(43,30): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(44,24): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(45,40): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(85,53): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(131,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(132,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(133,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(187,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(206,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(257,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(259,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(271,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(273,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(286,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(288,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(307,29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(384,44): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(389,45): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(394,45): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(496,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(497,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(498,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(517,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(518,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(519,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(532,20): warning C4244: 'argument': conversion from 'T' to 'const unsigned __int64', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(532,36): warning C4244: 'argument': conversion from 'T' to 'const unsigned __int64', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(532,52): warning C4244: 'argument': conversion from 'T' to 'const unsigned __int64', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(575,19): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\FluidSimulation\engine.cpp(582,31): warning C4305: '=': truncation from 'double' to 'float'
   Generating Code...
   FluidSimulation.vcxproj -> C:\Users\minic\OneDrive - Delft University of Technology\Personal Programming\FluidSimulation\x64\Debug\FluidSimulation.exe

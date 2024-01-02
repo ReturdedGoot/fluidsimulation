@@ -40,6 +40,7 @@ public:
     float Pitch;
     // camera options
     float MovementSpeed;
+    bool DoubleMovementSpeed;
     float MouseSensitivity;
     float Zoom;
 
